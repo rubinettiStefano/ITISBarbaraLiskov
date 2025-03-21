@@ -1,4 +1,4 @@
-package entities;
+package model.entities;
 
 import jakarta.persistence.*;
 
@@ -23,8 +23,22 @@ public class Docente extends Persona
 	@JoinColumn(name = "id_materia")
 	private Materia materia;
 
-	//TODO
-	//RELAZIONE N-N con SEZIONE che vediamo alla fine
+
+
+
+	@ManyToMany(fetch = FetchType.EAGER)
+	//crea una tabella nel db. chiamata docente_to_sezione
+	//con una f.k verso docente chiamata id_docente
+	//e una verso sezione chiamata id_sezione
+	//la usa in automatico per creare i collegamenti
+	@JoinTable
+	(
+			name = "docente_to_sezione",
+			joinColumns = @JoinColumn(name = "id_docente"),
+			inverseJoinColumns = @JoinColumn(name = "id_sezione")
+	)
+	private List<Sezione> sezioni = new ArrayList<>();
+
 
 	public Docente()
 	{
@@ -82,5 +96,15 @@ public class Docente extends Persona
 	public void setMateria(Materia materia)
 	{
 		this.materia = materia;
+	}
+
+	public List<Sezione> getSezioni()
+	{
+		return sezioni;
+	}
+
+	public void setSezioni(List<Sezione> sezioni)
+	{
+		this.sezioni = sezioni;
 	}
 }

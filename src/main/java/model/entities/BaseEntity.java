@@ -1,13 +1,12 @@
-package entities;
+package model.entities;
 
 import jakarta.persistence.*;
-
-@Entity
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+//TABLE per CLASS, metti i campi definiti qui nelle tabelle di chi ti eredita
+@MappedSuperclass
 public abstract class BaseEntity
 {
 	@Id
-	@GeneratedValue(strategy = GenerationType.TABLE)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	protected Long id;
 
 	public BaseEntity()	{	}

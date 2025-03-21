@@ -1,13 +1,12 @@
-package entities;
+package model.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
 
 @Entity
+//Posso creare delle query direttamente nelle entità da usare nel resto del programma (vedi riga 28 del DAO)
+//@NamedQuery(name = "findAll",query = "SELECT p FROM Presenza p")
 public class Presenza extends BaseEntity
 {
 

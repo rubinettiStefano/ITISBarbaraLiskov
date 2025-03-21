@@ -15,16 +15,16 @@
         <property name="hibernate.hbm2ddl.auto">update</property>
 
 
-        <mapping class="entities.BaseEntity" />
-        <mapping class="entities.Docente" />
-        <mapping class="entities.Inserimento" />
-        <mapping class="entities.Materia" />
-        <mapping class="entities.Nota" />
-        <mapping class="entities.Persona" />
-        <mapping class="entities.Presenza" />
-        <mapping class="entities.Sezione" />
-        <mapping class="entities.Studente" />
-        <mapping class="entities.Voto" />
+        <mapping class="model.entities.BaseEntity" />
+        <mapping class="model.entities.Docente" />
+        <mapping class="model.entities.Inserimento" />
+        <mapping class="model.entities.Materia" />
+        <mapping class="model.entities.Nota" />
+        <mapping class="model.entities.Persona" />
+        <mapping class="model.entities.Presenza" />
+        <mapping class="model.entities.Sezione" />
+        <mapping class="model.entities.Studente" />
+        <mapping class="model.entities.Voto" />
 
     </session-factory>
 </hibernate-configuration>
